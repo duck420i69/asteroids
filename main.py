@@ -29,9 +29,10 @@ def main():
         screen.fill("black")
 
         dt = global_clock.tick(60) / 1000
-        
+
         updatable.update(dt)
-        drawable.draw(screen)
+        for obj in drawable:
+            obj.draw(screen)
 
         pygame.display.flip()
 
